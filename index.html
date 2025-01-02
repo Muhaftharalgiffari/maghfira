@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>drh. Maghfirah Islamiah Ahmad - Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a5f7a;
+            --secondary-color: #86c6e3;
+            --accent-color: #ff9a76;
+            --text-color: #2c3e50;
+            --light-bg: #f8f9fa;
+            --dark-bg: #2c3e50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+
+        /* Enhanced Header */
+        .header {
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(26, 95, 122, 0.95), rgba(134, 198, 227, 0.9)),
+                url('/api/placeholder/1920/1080') center/cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-frame {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            margin-bottom: 2rem;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-frame::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.05);
+                opacity: 0.7;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin: 1rem 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .header p {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .profession-badge {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 500;
+            margin-top: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Navigation */
+        .nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .nav.scrolled {
+            padding: 0.8rem;
+            background: rgba(255, 255, 255, 0.98);
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent-color);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        /* Education Section */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .education-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .education-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .education-year {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* Research Section */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .research-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .research-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .research-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .research-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 15px;
+        }
+
+        /* Experience Section */
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .experience-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .experience-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .experience-date {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .experience-list {
+            list-style: none;
+        }
+
+        .experience-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .experience-list li::before {
+            content: '•';
+            color: var(--secondary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-card i {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .skills li {
+            list-style: none;
+        }
+
+        /* Enhanced Footer */
+        .footer {
+            background: var(--dark-bg);
+            color: white;
+            padding: 4rem 2rem;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg,
+                    var(--primary-color),
+                    var(--secondary-color),
+                    var(--accent-color));
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-section {
+            padding: 1rem;
+        }
+
+        .footer-section h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--accent-color);
+        }
+
+        .contact-info {
+            list-style: none;
+        }
+
+        .contact-info li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-info i {
+            color: var(--secondary-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 3rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gallery {
+            background-color: var(--light-bg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            background-color: #fff;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top,
+                    rgba(0, 0, 0, 0.8) 0%,
+                    rgba(0, 0, 0, 0.4) 50%,
+                    rgba(0, 0, 0, 0) 100%);
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+
+        .gallery-info {
+            color: white;
+            text-align: left;
+        }
+
+        .gallery-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .gallery-info p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        .research-card {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 1.5rem;
+        }
+
+        .research-image {
+            width: 100%;
+            height: 430px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .research-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .research-card:hover .research-image img {
+            transform: scale(1.05);
+        }
+
+        .research-content {
+            flex: 1;
+        }
+
+        /* Adjust spacing throughout the portfolio */
+        section {
+            padding: 60px 20px;
+            /* Reduced padding */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .section-title {
+            margin-bottom: 40px;
+            /* Reduced margin */
+        }
+
+        .education-grid,
+        .research-grid,
+        .experience-grid,
+        .skills-grid {
+            gap: 20px;
+            /* Reduced gap */
+        }
+
+        .education-card,
+        .experience-card,
+        .skill-card {
+            padding: 20px;
+            /* Reduced padding */
+        }
+
+        /* Adjust gallery spacing */
+        .gallery-grid {
+            gap: 15px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            section {
+                padding: 40px 15px;
+            }
+
+            .research-image {
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .research-image {
+                height: 160px;
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1rem;
+                padding: 15px;
+            }
+
+            .gallery-info h3 {
+                font-size: 1.1rem;
+            }
+
+            .gallery-info p {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                padding: 10px;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .profile-frame {
+                width: 220px;
+                height: 220px;
+            }
+
+            .education-grid,
+            .research-grid,
+            .experience-grid,
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .profile-frame {
+                width: 180px;
+                height: 180px;
+            }
+
+            .section-title h2 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-content" data-aos="fade-up">
+            <div class="profile-frame">
+                <img src="images/Foto.jpg" alt="drh. Maghfirah Islamiah Ahmad" class="profile-img">
+            </div>
+            <h1>drh. Maghfirah Islamiah Ahmad</h1>
+            <div class="profession-badge">Dokter Hewan Profesional</div>
+            <p>Dokter hewan berdedikasi dengan keahlian dalam kesehatan hewan ternak, kesayangan, dan akuatik</p>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <ul class="nav-links">
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#gallery">Galeri</a></li>
+            <li><a href="#education">Pendidikan</a></li>
+            <li><a href="#research">Penelitian</a></li>
+            <li><a href="#experience">Pengalaman</a></li>
+            <li><a href="#skills">Keahlian</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Tentang Saya</h2>
+            </div>
+            <p data-aos="fade-up" data-aos-delay="100">
+                Saya adalah dokter hewan lulusan Universitas Hasanuddin dengan minat dalam kesehatan,
+                kesejahteraan, dan pengobatan hewan. Penelitian saya berfokus pada obat-obatan dan penyakit
+                hewan, serta saya memiliki pengalaman magang di bidang pengelolaan hewan akuatik, ternak
+                besar dan kecil, hewan kesayangan, dan produk asal hewan. Pengalaman ini telah membentuk
+                kemampuan saya untuk bekerja secara optimal dalam lingkungan yang dinamis dan
+                menantang. Hingga saat ini saya terus berkomitmen untuk belajar dan mengembangkan
+                keterampilan di bidang kedokteran hewan.
+            </p>
+        </div>
+    </section>
+
+    <section id="education" class="education">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Pendidikan</h2>
+            </div>
+            <div class="education-grid">
+                <div class="education-card" data-aos="fade-up">
+                    <div class="education-year">2023-2024</div>
+                    <h3>Pendidikan Profesi Kedokteran Hewan</h3>
+                    <p>Universitas Hasanuddin</p>
+                    <div class="education-gpa">IPK: 3.90</div>
+                </div>
+                <div class="education-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="education-year">2018-2022</div>
+                    <h3>Sarjana Kedokteran Hewan</h3>
+                    <p>Universitas Hasanuddin</p>
+                    <div class="education-gpa">IPK: 3.74</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="research" class="research">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Penelitian</h2>
+            </div>
+            <div class="research-grid">
+                <div class="research-card" data-aos="fade-up">
+                    <div class="research-image">
+                        <img src="images/Sirsak.JPG" alt="Penelitian Bratawali dan Sirsak">
+                    </div>
+                    <div class="research-content">
+                        <h3>Efektivitas Ekstrak Batang Bratawali dan Daun Sirsak</h3>
+                        <p>Studi mengenai efektivitas ekstrak Tinospora crispa L. dan Annona muricata L. terhadap
+                            mortalitas hama penggerak padi (Scirpopaga innotata)</p>
+                        <a href="https://ojs.unm.ac.id/pinisi/article/view/9375" class="research-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Lihat Publikasi
+                        </a>
+                    </div>
+                </div>
+                <div class="research-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="research-image">
+                        <img src="images/Propolis.jpg" alt="Penelitian Propolis">
+                    </div>
+                    <div class="research-content">
+                        <h3>Pengaruh Propolis Sebagai Hepatoprotektor</h3>
+                        <p>Penelitian tentang efek propolis sebagai hepatoprotektor pada hati tikus putih jantan yang
+                            diinduksi Dexamethasone berdasarkan perubahan histopatologinya</p>
+                        <a href="https://repository.unhas.ac.id/view/creators/Ahmad=3AMaghfirah_Islamiah=3A=3A.default.html"
+                            class="research-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Lihat Publikasi
+                        </a>
+                    </div>
+                </div>
+                <div class="research-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="research-image">
+                        <img src="images/3.jpg" alt="Penelitian Propolis">
+                    </div>
+                    <div class="research-content">
+                        <h3>Identifikasi Staphylococcus aureus pada Ayam Broiler suspect staphylococcosis</h3>
+                        <p>Penelitian tentang efek propolis sebagai hepatoprotektor pada hati tikus putih jantan yang
+                            diinduksi Dexamethasone berdasarkan perubahan histopatologinya</p>
+                        <a href="https://repository.unhas.ac.id/view/creators/Ahmad=3AMaghfirah_Islamiah=3A=3A.default.html"
+                            class="research-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Lihat Publikasi
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Pengalaman Profesional</h2>
+            </div>
+            <div class="experience-grid">
+                <div class="experience-card" data-aos="fade-up">
+                    <h3>BBPTU-HPT, Baturraden</h3>
+                    <div class="experience-date">Februari-Maret 2024</div>
+                    <ul class="experience-list">
+                        <li>Pemeriksaan kesehatan dan pengobatan pada induk sapi dan pedet</li>
+                        <li>Mengamati tanda-tanda birahi sapi dan melakukan inseminasi buatan</li>
+                        <li>Melaksanakan pemerahan susu dan pemeriksaan keamanan susu</li>
+                        <li>Melakukan pemeriksaan kebuntingan dan organ reproduksi sapi</li>
+                    </ul>
+                </div>
+                <div class="experience-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3>KPSP Setia Kawan, Nongkojajar</h3>
+                    <div class="experience-date">Januari-Februari 2024</div>
+                    <ul class="experience-list">
+                        <li>Pemeriksaan kesehatan dan pengobatan pada sapi perah</li>
+                        <li>Melakukan vaksinasi LSD pada sapi perah</li>
+                        <li>Melakukan uji laboratorium terhadap susu</li>
+                        <li>Pemeriksaan kebuntingan dan inseminasi buatan</li>
+                    </ul>
+                </div>
+                <div class="experience-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>BBPBAP, Takalar</h3>
+                    <div class="experience-date">November-Desember 2023</div>
+                    <ul class="experience-list">
+                        <li>Pengujian laboratorium pada hewan akuatik</li>
+                        <li>Kontrol kualitas produk perikanan</li>
+                        <li>Pengawasan keamanan produk pangan hasil perikanan</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Galeri Kegiatan</h2>
+            </div>
+            <div class="gallery-grid" data-aos="fade-up" data-aos-delay="100">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item">
+                    <img src="images/kesehatan sapi.jpg" alt="Pemeriksaan Kesehatan Sapi" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Pemeriksaan Kesehatan Sapi</h3>
+                            <p>BBPTU-HPT, Baturraden</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item">
+                    <img src="images/foto4.jpg" alt="Praktik Laboratorium" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Analisis Laboratorium</h3>
+                            <p>BBPBAP, Takalar</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item">
+                    <img src="images/foto3.jpg" alt="Pengujian Sampel" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Pengujian Sampel</h3>
+                            <p>Balai Karantina Pertanian</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item">
+                    <img src="images/baturaden.jpg" alt="Perawatan Hewan" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Magang BPTU-HPT, Baturraden </h3>
+                            <p>Praktik Klinik</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item">
+                    <img src="images/ayam2.jpg" alt="Inseminasi Buatan" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Memastikan keamanan produk ayam Boiler.</h3>
+                            <p>Program Peternakan PT. Perkasa Agung Sejati</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/susu.jpg" alt="Inseminasi Buatan" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Melakukan uji laboratorium terhadap susu hasil pemerahan.</h3>
+                            <p>Program KPSP Setia Kawan, Nongkojajar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section id="skills" class="skills">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Keahlian Profesional</h2>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card" data-aos="fade-up">
+                        <i class="fas fa-heartbeat"></i>
+                        <h3>Kesehatan Hewan</h3>
+                        <ul>
+                            <li>Diagnosis dan Pengobatan</li>
+                            <li>Kesejahteraan Hewan</li>
+                            <li>Manajemen Kesehatan</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-microscope"></i>
+                        <h3>Laboratorium</h3>
+                        <ul>
+                            <li>Mikrobiologi</li>
+                            <li>Parasitologi</li>
+                            <li>Virologi</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-clipboard-check"></i>
+                        <h3>Manajemen Klinis</h3>
+                        <ul>
+                            <li>Inseminasi Buatan</li>
+                            <li>Vaksinasi</li>
+                            <li>Pemeriksaan Kebuntingan</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Keamanan Pangan</h3>
+                        <ul>
+                            <li>Kontrol Kualitas</li>
+                            <li>Pengawasan Produk</li>
+                            <li>Standar Keamanan</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer" id="contact">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Informasi Kontak</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+62 812 4719 9664</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>fira9992089133@gmail.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Makassar, Sulawesi Selatan, Indonesia</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Jaringan Profesional</h3>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/maghfirah-islamiah-ahmad-930a0625b/" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:fira9992089133@gmail.com">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="tel:+6281247199664">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Area Keahlian</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-heartbeat"></i>
+                            <span>Kedokteran Hewan</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-microscope"></i>
+                            <span>Analisis Laboratorium</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Kesejahteraan Hewan</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 drh. Maghfirah Islamiah Ahmad. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <script>
+            // Initialize AOS
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Add active class to nav links on scroll
+            window.addEventListener('scroll', () => {
+                let current = '';
+                const sections = document.querySelectorAll('section');
+                const navHeight = document.querySelector('.nav').offsetHeight;
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - navHeight - 100;
+                    const sectionHeight = section.offsetHeight;
+                    if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            // Navigation background change on scroll
+            window.addEventListener('scroll', () => {
+                const nav = document.querySelector('.nav');
+                if (window.scrollY > 100) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            });
+        </script>
+</body>
+
+</html>
